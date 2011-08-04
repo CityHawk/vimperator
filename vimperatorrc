@@ -1,12 +1,15 @@
-"2.3.1 (created: 2010/04/07 18:25:13)
-
-set guioptions=Nr
-set runtimepath=/home/suchkov/.vimperator
+set guioptions=nr
+set runtimepath=$HOME/.vimperator
 colorscheme desert
 style! -name=statusbar chrome://* <<EOF
 #status-bar statusbarpanel { padding: 0 1px !important; }
 statusbarpanel > * { margin: 0 !important; padding: 0 2px 0 0 !important; }
+autocmd LocationChange .* js modes.passAllKeys=false
+autocmd LocationChange google\\.com/reader/view js modes.passAllKeys=true
+autocmd LocationChange mail\\.google\\.com/mail js modes.passAllKeys=true
+set hintchars=asdfhjkl
+hi -append Hint font-size:18px
 EOF
-source! /home/suchkov/.vimperatorrc.local
+source $HOME/.vimperatorrc.local
 
 " vim: set ft=vimperator:
